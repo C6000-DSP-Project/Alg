@@ -1,0 +1,243 @@
+******************************************************************************
+               TMS320C6x Linker PC v8.3.12                     
+******************************************************************************
+>> Linked Tue Apr 26 14:59:30 2022
+
+OUTPUT FILE NAME:   <IIR.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00804120
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  DSPL2RAM              00800000   00040000  000053a8  0003ac58  RWIX
+  SHRAM                 80000000   00020000  00000000  00020000  RWIX
+  DDR2                  c0000000   08000000  00000000  08000000  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00800000    00800000    00003020   00000000    rw-
+  00800000    00800000    00003020   00000000    rw- .far
+00803020    00803020    00001300   00001300    r-x
+  00803020    00803020    00001300   00001300    r-x .text
+00804320    00804320    00001000   00000000    rw-
+  00804320    00804320    00001000   00000000    rw- .stack
+00805320    00805320    0000004c   0000004c    r--
+  00805320    00805320    0000004c   0000004c    r-- .const
+0080536c    0080536c    0000000c   00000000    rw-
+  0080536c    0080536c    0000000c   00000000    rw- .fardata
+00805378    00805378    00000030   00000030    r--
+  00805378    00805378    00000030   00000030    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text      0    00803020    00001300     
+                  00803020    00000600     rts6740_elf.lib : divd.c.obj (.text:__c6xabi_divd)
+                  00803620    000003a0     dsplib.ae674 : DSPF_sp_iir.oe674 (.text:optimized)
+                  008039c0    00000160     main.obj (.text)
+                  00803b20    00000120     mathlib.ae674 : sinsp.oe674 (.text:optasm)
+                  00803c40    00000100     rts6740_elf.lib : copy_decompress_rle.c.obj (.text:__TI_decompress_rle_core)
+                  00803d40    000000e0                     : exit.c.obj (.text:exit)
+                  00803e20    000000e0                     : memset.c.obj (.text:memset)
+                  00803f00    000000c0                     : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00803fc0    000000c0                     : tls.c.obj (.text:tls:init:__TI_tls_init)
+                  00804080    000000a0                     : memcpy64.asm.obj (.text:memcpy)
+                  00804120    00000080                     : boot.c.obj (.text:_c_int00)
+                  008041a0    00000060                     : llshift.c.obj (.text:__c6xabi_llshru)
+                  00804200    00000040                     : frcmpyd_div.c.obj (.text:__TI_frcmpyd_div)
+                  00804240    00000040                     : args_main.c.obj (.text:_args_main)
+                  00804280    00000020                     : startup.c.obj (.text:_system_post_cinit)
+                  008042a0    00000020                     : pre_init.c.obj (.text:_system_pre_init)
+                  008042c0    00000020                     : exit.c.obj (.text:abort)
+                  008042e0    00000020                     : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00804300    00000020                     : copy_decompress_rle.c.obj (.text:decompress:rle24:__TI_decompress_rle24)
+
+.stack     0    00804320    00001000     UNINITIALIZED
+                  00804320    00000008     rts6740_elf.lib : boot.c.obj (.stack)
+                  00804328    00000ff8     --HOLE--
+
+.const     0    00805320    0000004c     
+                  00805320    00000024     main.obj (.const:DEN)
+                  00805344    00000004     --HOLE-- [fill = 0]
+                  00805348    00000024     main.obj (.const:NUM)
+
+.cinit     0    00805378    00000030     
+                  00805378    0000000d     (.cinit..fardata.load) [load image, compression = rle]
+                  00805385    0000000b     (.cinit..far.load) [load image, compression = rle]
+                  00805390    00000008     (__TI_handler_table)
+                  00805398    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00800000    00000000     UNINITIALIZED
+
+.fardata   0    0080536c    0000000c     UNINITIALIZED
+                  0080536c    0000000c     rts6740_elf.lib : exit.c.obj (.fardata)
+
+.far       0    00800000    00003020     UNINITIALIZED
+                  00800000    00001010     (.common:IIRDelay)
+                  00801010    00001010     (.common:IIROut)
+                  00802020    00001000     (.common:IIRIn)
+
+MODULE SUMMARY
+
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
+    .\
+       main.obj                     352    72        12320  
+    +--+----------------------------+------+---------+---------+
+       Total:                       352    72        12320  
+                                                            
+    ../../Library/dsplib/dsplib.ae674
+       DSPF_sp_iir.oe674            928    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       928    0         0      
+                                                            
+    ../../Library/mathlib/mathlib.ae674
+       sinsp.oe674                  288    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       288    0         0      
+                                                            
+    C:\ti\ti-cgt-c6000_8.3.12\lib\rts6740_elf.lib
+       divd.c.obj                   1536   0         0      
+       copy_decompress_rle.c.obj    288    0         0      
+       exit.c.obj                   256    0         12     
+       memset.c.obj                 224    0         0      
+       autoinit.c.obj               192    0         0      
+       tls.c.obj                    192    0         0      
+       memcpy64.asm.obj             160    0         0      
+       boot.c.obj                   128    0         0      
+       llshift.c.obj                96     0         0      
+       args_main.c.obj              64     0         0      
+       frcmpyd_div.c.obj            64     0         0      
+       copy_decompress_none.c.obj   32     0         0      
+       pre_init.c.obj               32     0         0      
+       startup.c.obj                32     0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       3296   0         12     
+                                                            
+       Stack:                       0      0         4096   
+       Linker Generated:            0      48        0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 4864   120       16428  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00805398 records: 2, size/record: 8, table size: 16
+	.fardata: load addr=00805378, load size=0000000d bytes, run addr=0080536c, run size=0000000c bytes, compression=rle
+	.far: load addr=00805385, load size=0000000b bytes, run addr=00800000, run size=00003020 bytes, compression=rle
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00805390 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+008042c0  C$$EXIT                        
+00805320  DEN                            
+00803620  DSPF_sp_iir                    
+00800000  IIRDelay                       
+00802020  IIRIn                          
+00801010  IIROut                         
+00805348  NUM                            
+00805398  __TI_CINIT_Base                
+008053a8  __TI_CINIT_Limit               
+00805390  __TI_Handler_Table_Base        
+00805398  __TI_Handler_Table_Limit       
+00805320  __TI_STACK_END                 
+00001000  __TI_STACK_SIZE                
+00000000  __TI_STATIC_BASE               
+UNDEFED   __TI_TLS_INIT_Base             
+UNDEFED   __TI_TLS_INIT_Limit            
+00803f00  __TI_auto_init_nobinit_nopinit 
+0080536c  __TI_cleanup_ptr               
+008042e0  __TI_decompress_none           
+00804300  __TI_decompress_rle24          
+00805370  __TI_dtors_ptr                 
+00805374  __TI_enable_exit_profile_output
+00804200  __TI_frcmpyd_div               
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+00803fc0  __TI_tls_init                  
+ffffffff  __binit__                      
+00803020  __c6xabi_divd                  
+008041a0  __c6xabi_llshru                
+ffffffff  __c_args__                     
+00804240  _args_main                     
+00804120  _c_int00                       
+00804320  _stack                         
+00804280  _system_post_cinit             
+008042a0  _system_pre_init               
+008042c0  abort                          
+ffffffff  binit                          
+00803d40  exit                           
+008039c0  main                           
+00804080  memcpy                         
+00803e20  memset                         
+00803b34  sinsp                          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  __TI_STATIC_BASE               
+00001000  __TI_STACK_SIZE                
+00800000  IIRDelay                       
+00801010  IIROut                         
+00802020  IIRIn                          
+00803020  __c6xabi_divd                  
+00803620  DSPF_sp_iir                    
+008039c0  main                           
+00803b34  sinsp                          
+00803d40  exit                           
+00803e20  memset                         
+00803f00  __TI_auto_init_nobinit_nopinit 
+00803fc0  __TI_tls_init                  
+00804080  memcpy                         
+00804120  _c_int00                       
+008041a0  __c6xabi_llshru                
+00804200  __TI_frcmpyd_div               
+00804240  _args_main                     
+00804280  _system_post_cinit             
+008042a0  _system_pre_init               
+008042c0  C$$EXIT                        
+008042c0  abort                          
+008042e0  __TI_decompress_none           
+00804300  __TI_decompress_rle24          
+00804320  _stack                         
+00805320  DEN                            
+00805320  __TI_STACK_END                 
+00805348  NUM                            
+0080536c  __TI_cleanup_ptr               
+00805370  __TI_dtors_ptr                 
+00805374  __TI_enable_exit_profile_output
+00805390  __TI_Handler_Table_Base        
+00805398  __TI_CINIT_Base                
+00805398  __TI_Handler_Table_Limit       
+008053a8  __TI_CINIT_Limit               
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  binit                          
+UNDEFED   __TI_TLS_INIT_Base             
+UNDEFED   __TI_TLS_INIT_Limit            
+
+[43 symbols]
