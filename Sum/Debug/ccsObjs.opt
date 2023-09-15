@@ -1,1 +1,0 @@
-"./main.obj" "../C6748.cmd" -llibc.a -l"../../Library/mathlib/mathlib.ae674" -l"../../Library/dsplib/dsplib.ae674" 
